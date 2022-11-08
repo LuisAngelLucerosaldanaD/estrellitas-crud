@@ -1,0 +1,223 @@
+basePath: /
+definitions:
+  models.User:
+    properties:
+      age:
+        type: integer
+      birth_date:
+        type: string
+      email:
+        type: string
+      id:
+        type: string
+      lastname:
+        type: string
+      name:
+        type: string
+      password:
+        type: string
+      sexo:
+        type: string
+    type: object
+  users.DeleteUser:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    type: object
+  users.RequestLogin:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    type: object
+  users.ResponseDeleteUser:
+    properties:
+      code:
+        type: integer
+      error:
+        type: boolean
+      msg:
+        type: string
+      type:
+        type: integer
+    type: object
+  users.ResponseLogin:
+    properties:
+      code:
+        type: integer
+      data:
+        $ref: '#/definitions/users.Token'
+      error:
+        type: boolean
+      msg:
+        type: string
+      type:
+        type: integer
+    type: object
+  users.Token:
+    properties:
+      access_token:
+        type: string
+      refresh_token:
+        type: string
+    type: object
+  users.requestCreateUser:
+    properties:
+      age:
+        type: integer
+      birth_date:
+        type: string
+      confirm_password:
+        type: string
+      email:
+        type: string
+      id:
+        type: string
+      lastname:
+        type: string
+      name:
+        type: string
+      password:
+        type: string
+      sexo:
+        type: string
+    type: object
+  users.responseCreateUser:
+    properties:
+      code:
+        type: integer
+      data:
+        type: string
+      error:
+        type: boolean
+      msg:
+        type: string
+      type:
+        type: integer
+    type: object
+  users.responseUser:
+    properties:
+      code:
+        type: integer
+      data:
+        $ref: '#/definitions/models.User'
+      error:
+        type: boolean
+      msg:
+        type: string
+      type:
+        type: integer
+    type: object
+host: http://127.0.0.1:50050
+info:
+  contact:
+    email: info@estrellitas.net
+    name: API Support
+  description: Documentation Smart Contract
+  license:
+    name: Software Owner
+    url: https://www.estrellitas.net/terms/licenses
+  termsOfService: https://www.estrellitas.net/terms/
+  title: Estrellitas crud
+  version: "1.0"
+paths:
+  /api/v1/user/{id}:
+    get:
+      consumes:
+      - application/json
+      description: get user by ID
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: user ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/users.responseUser'
+      summary: get user by ID
+      tags:
+      - User
+  /api/v1/user/create:
+    post:
+      consumes:
+      - application/json
+      description: Create User
+      parameters:
+      - description: Request create user
+        in: body
+        name: createUser
+        required: true
+        schema:
+          $ref: '#/definitions/users.requestCreateUser'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/users.responseCreateUser'
+      summary: Create User
+      tags:
+      - User
+  /api/v1/user/delete:
+    post:
+      consumes:
+      - application/json
+      description: Delete Estrellitas Crud
+      parameters:
+      - description: Request delete user
+        in: body
+        name: Delete
+        required: true
+        schema:
+          $ref: '#/definitions/users.DeleteUser'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/users.ResponseDeleteUser'
+      summary: Delete Estrellitas Crud
+      tags:
+      - User
+  /api/v1/user/login:
+    post:
+      consumes:
+      - application/json
+      description: Login Estrellitas Crud
+      parameters:
+      - description: Request login
+        in: body
+        name: Login
+        required: true
+        schema:
+          $ref: '#/definitions/users.RequestLogin'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/users.ResponseLogin'
+      summary: Login Estrellitas Crud
+      tags:
+      - User
+swagger: "2.0"
+tags:
+- description: Methods of user
+  name: User
