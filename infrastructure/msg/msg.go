@@ -1,9 +1,9 @@
 package msg
 
 import (
-	"onlyone_smc/internal/env"
-	"onlyone_smc/internal/logger"
-	"onlyone_smc/pkg/cfg"
+	"estrellitas-crud/infrastructure/env"
+	"estrellitas-crud/infrastructure/logger"
+	"estrellitas-crud/pkg/cfg"
 	"strconv"
 
 	"github.com/jmoiron/sqlx"

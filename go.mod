@@ -19,8 +19,8 @@ require (
 	github.com/lib/pq v1.10.7 // indirect
 	github.com/swaggo/swag v1.8.7 // indirect
 	github.com/urfave/cli/v2 v2.23.4 // indirect
-	golang.org/x/sys v0.2.0 // indirect
+	golang.org/x/crypto v0.0.0-20220214200702-86341886e292 // indirect
+	golang.org/x/sys v0.0.0-20220829200755-d48e67d00261 // indirect
 	golang.org/x/term v0.1.0 // indirect
 	golang.org/x/text v0.4.0 // indirect
-	golang.org/x/tools v0.2.0 // indirect
 )

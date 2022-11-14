@@ -28,6 +28,7 @@ type App struct {
 	RSAPrivateKey     string `json:"rsa_private_key"`
 	RSAPublicKey      string `json:"rsa_public_key"`
 	LoggerHttp        bool   `json:"logger_http"`
+	Language          string `json:"language"`
 }
 
 type Template struct {
