@@ -74,8 +74,6 @@ definitions:
         type: string
       email:
         type: string
-      id:
-        type: string
       lastname:
         type: string
       name:
@@ -116,7 +114,7 @@ info:
   contact:
     email: info@estrellitas.net
     name: API Support
-  description: Documentation Smart Contract
+  description: Documentation for estrellitas crud
   license:
     name: Software Owner
     url: https://www.estrellitas.net/terms/licenses

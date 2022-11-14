@@ -1,6 +1,7 @@
 package users
 
 import (
+	"estrellitas-crud/infrastructure/pwd"
 	"fmt"
 	"github.com/asaskevich/govalidator"
 
@@ -28,7 +29,7 @@ func NewUsersService(repository ServicesUsersRepository, user *models.User, TxID
 }
 
 func (s *service) CreateUsers(id string, name string, lastname string, email string, birthDate string, sexo string, age int, password string) (*Users, int, error) {
-	m := NewUsers(id, name, lastname, email, birthDate, sexo, age, password)
+	m := NewUsers(id, name, lastname, email, birthDate, sexo, age, pwd.Encrypt(password))
 	if valid, err := m.valid(); !valid {
 		logger.Error.Println(s.txID, " - don't meet validations:", err)
 		return m, 15, err

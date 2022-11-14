@@ -282,9 +282,6 @@ const docTemplate = `{
                 "email": {
                     "type": "string"
                 },
-                "id": {
-                    "type": "string"
-                },
                 "lastname": {
                     "type": "string"
                 },
@@ -355,7 +352,7 @@ var SwaggerInfo = &swag.Spec{
 	BasePath:         "/",
 	Schemes:          []string{},
 	Title:            "Estrellitas crud",
-	Description:      "Documentation Smart Contract",
+	Description:      "Documentation for estrellitas crud",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 }

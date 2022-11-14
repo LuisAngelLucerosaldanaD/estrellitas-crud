@@ -13,6 +13,6 @@ func RouterUser(app *fiber.App, db *sqlx.DB, txID string) {
 	user := v1.Group("/user")
 	user.Post("/create", h.createUser)
 	user.Post("/login", h.Login)
-	user.Post("/delete", h.Delete)
+	user.Post("/delete", middleware.JWTProtected(), h.Delete)
 	user.Get("/:id", middleware.JWTProtected(), h.getUserById)
 }

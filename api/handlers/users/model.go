@@ -3,7 +3,6 @@ package users
 import "estrellitas-crud/infrastructure/models"
 
 type requestCreateUser struct {
-	Id              string `json:"id"`
 	Email           string `json:"email"`
 	Password        string `json:"password"`
 	ConfirmPassword string `json:"confirm_password"`

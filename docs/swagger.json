@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "Documentation Smart Contract",
+        "description": "Documentation for estrellitas crud",
         "title": "Estrellitas crud",
         "termsOfService": "https://www.estrellitas.net/terms/",
         "contact": {
@@ -273,9 +273,6 @@
                     "type": "string"
                 },
                 "email": {
-                    "type": "string"
-                },
-                "id": {
                     "type": "string"
                 },
                 "lastname": {

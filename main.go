@@ -7,7 +7,7 @@ import (
 
 // @title Estrellitas crud
 // @version 1.0
-// @description Documentation Smart Contract
+// @description Documentation for estrellitas crud
 // @termsOfService https://www.estrellitas.net/terms/
 // @contact.name API Support
 // @contact.email info@estrellitas.net
